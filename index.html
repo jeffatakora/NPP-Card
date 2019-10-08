@@ -1,70 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NPP Card</title>
-    <style>
-        body {
-            font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
-            margin: 12px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        .card-container {
-            cursor: pointer;
-            height: 330px;
-            perspective: 600;
-            position: relative;
-            width: 526px;
-        }
-
-        .card {
-            height: 100%;
-            position: absolute;
-            transform-style: preserve-3d;
-            transition: all 1s ease-in-out;
-            width: 100%;
-            box-shadow: 0px 0px 7px #00000080;
-            border-radius: 5px;
-        }
-
-        .card:hover {
-            transform: rotateY(180deg);
-        }
-
-        .card .side {
-            backface-visibility: hidden;
-            border-radius: 6px;
-            height: 100%;
-            position: absolute;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .card .back {
-            background: #eaeaed;
-            color: #0087cc;
-            line-height: 150px;
-            text-align: center;
-            transform: rotateY(180deg);
-        }
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
 </head>
 
 <body>
-    <div class="card-container">
-        <div class="card">
-            <div class="side"><img src="img/front.jpeg" alt="Jimmy Eat World"></div>
-            <div class="side back"><img src="img/backpic.jpeg" alt="Jimmy Eat World"></div>
-        </div>
-    </div>
+
+<h2 class="w3-center">Card Preview</h2>
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="img/frontframe.png" style="width:100%">
+  <img class="mySlides" src="img/backframe.png" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
 </body>
-
 </html>
-
